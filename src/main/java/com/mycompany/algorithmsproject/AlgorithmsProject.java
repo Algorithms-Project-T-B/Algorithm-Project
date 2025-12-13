@@ -84,12 +84,17 @@ public class AlgorithmsProject {
         for (int i = 0; i < n; i++) arr[i] = GLOBAL_RAND.nextInt(1_000_000) + 1;
         return arr;
     }
+public static int[] generateSorted(int n) {
+    int[] arr = new int[n];
 
-    public static int[] generateSorted(int n) {
-        int[] arr = generateRandom(n);
-        java.util.Arrays.sort(arr);
-        return arr;
+    int current = GLOBAL_RAND.nextInt(10);
+    for (int i = 0; i < n; i++) {
+        current += GLOBAL_RAND.nextInt(5);
+        arr[i] = current;
     }
+    return arr;
+}
+  
 
     public static int[] generateReverseSorted(int n) {
         int[] arr = generateSorted(n);
@@ -108,4 +113,3 @@ public class AlgorithmsProject {
         return arr;
     }
 }
-
